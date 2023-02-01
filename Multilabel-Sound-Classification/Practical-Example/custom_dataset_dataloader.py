@@ -119,5 +119,3 @@ if __name__ == "__main__":
     print(signal)
     print(label_as_tensor)
     print(label_as_string)
-
-    a=1
