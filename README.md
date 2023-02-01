@@ -1,2 +1,2 @@
-# PyTorch-For-Audio-Multilabel-Sound-Classification
+# PyTorch-For-Audio
 Deep learning for audio using PyTorch
