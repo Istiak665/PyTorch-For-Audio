@@ -14,14 +14,15 @@ def predict(model, input, target_tensor, target_string, threshold=None):
         predictions = model(input).squeeze()
         # Tensor (1, 14) -> [ [0.1, 0.01, ..., 0.6] ]
         predictions = torch.sigmoid(predictions)
+        predictions_percentage = predictions * 100
         # Actual Label as Tensor
         target_tensor = target_tensor
         # Actual Label as String
         target_string = target_string
 
-        for label, prediction in zip(target_string, predictions):
+        for label, prediction in zip(target_string, predictions_percentage):
             if prediction > threshold:
-                print(f"{label}: {prediction}")
+                print(f"{label}: {prediction:.2f}%")
 
     return predictions, target_tensor, target_string
 
